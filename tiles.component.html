@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-header bg-primary">Tiles</div>
+         <div class="card-body o">
+<table class="table"  *ngIf="tiles && tiles.length>0">
+    <thead>
+      <tr> 
+           <td>Image</td>
+        <td>Name</td>
+        <td>Model</td>
+        <td>Price</td>
+        <td>Rating</td>
+        <td>Status</td></tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let tile of tiles">  
+                <!--above tiles is an object, which was created in tiles component , and it contains array list of values -->
+                 <td>{{tile.image}}</td>
+                <td>{{tile.name}}</td>
+                <td>{{tile.model}}</td>
+                <td>{{tile.price | currency:['INR']}}</td><!-- for indian currency --> 
+                <!-- <td>{{tile.price | currency}}</td>for Dollar currency -->
+                <td>{{tile.rating}}</td>
+                <td>{{tile.status |status}}</td>
+            </tr>
+    </tbody>
+
+</table>
+<div  *ngIf="tiles && tiles.length==0">
+    No Data Found...
+</div>
+
+         </div>
+        </div>
+    </div>
+<!-- new -->
